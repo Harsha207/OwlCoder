@@ -1,0 +1,19 @@
+class Solution{
+public:
+    vector<int> pattern(int N){
+        // code here
+        vector<int>vt;
+        int a=N;
+        while(N>0)
+        {
+            vt.push_back(N);
+            N=N-5;
+        }
+        while(N<=a)
+        {
+            vt.push_back(N);
+            N=N+5;
+        }
+        return vt;
+    }
+};
