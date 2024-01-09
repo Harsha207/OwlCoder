@@ -1,0 +1,16 @@
+class Solution {
+public:
+        void search(TreeNode* r,vector<int>&v)
+        {
+            if(r==NULL) return;
+            if(r->left==NULL and r->right==NULL)  v.push_back(r->val);
+            search(r->left,v);
+            search(r->right,v);
+        }
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        vector<int>v1,v2;
+        search(root1,v1);
+        search(root2,v2);
+        return v1==v2;
+    }
+};
