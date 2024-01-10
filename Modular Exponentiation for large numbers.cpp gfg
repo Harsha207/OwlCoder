@@ -1,0 +1,16 @@
+long long int  a=1;
+while(n)
+{
+  if(n&1)
+  {
+		  n=n-1;
+		  a=(a%M * x%M)%M;
+	}
+	else
+	{
+		  n=n/2;
+		  x=(x%M * x%M)%M;
+	}
+}
+return a%M;
+}
