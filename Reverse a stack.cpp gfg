@@ -1,0 +1,10 @@
+class Solution{
+public:
+    void Reverse(stack<int> &St){
+        while(!St.empty())
+        {
+            cout<<St.top()<<" ";
+            St.pop();
+        }
+    }
+};
