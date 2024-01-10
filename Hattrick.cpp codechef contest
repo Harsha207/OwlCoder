@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t,f=0;
+	cin>>t;
+	while(t--)
+	{
+	    char scores[6];
+	    bool hat=false;
+	    for(int i=0;i<6;i++)
+	    {
+	        cin>>scores[i];
+	    }
+	    for(int i=0;i<4;i++)
+	    {
+	        if(scores[i]=='W' and scores[i+1]=='W' and scores[i+2]=='W')
+	        {
+	            hat=true;
+	            break;
+	        }
+	    }
+	    if(hat==true)
+	    {
+	        cout<<"Yes"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"NO"<<endl;
+	    }
+	}
+}
