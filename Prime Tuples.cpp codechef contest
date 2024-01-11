@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long  n=1e6+1;;
+vector<long long>primes(n,1);
+void sieve()
+{
+    primes[0]=0;
+    primes[1]=0;
+    for(int i=2;i*i<=n;i++)
+    {
+        if(primes[i])
+        {
+            for(int j=i*i;j<n;j+=i)
+            {
+                primes[j]=0;
+            }
+        }
+    }
+}
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	sieve();
+	while(t--)
+	{
+	    int a,c=0;
+	    cin>>a;
+	    for(int i=3;i<=a;i+=2)
+	    {
+	        if(primes[i]==1 and a>=i+2 and primes[i+2]==1)
+	        {
+	            c++;
+	        }
+	    }
+	    cout<<c<<endl;
+	}
+}
