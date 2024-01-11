@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int a=0;
+    void leet(TreeNode* root,int min,int max)
+    {
+        if(root==NULL) return;
+        if(root->val>max) max=root->val;
+        if(root->val<min) min=root->val;
+        if(a<abs(max-min)) a=abs(max-min);
+        leet(root->left,min,max);
+        leet(root->right,min,max);
+    }
+    int maxAncestorDiff(TreeNode* root) {
+        int max=root->val;
+        int min=root->val;
+        leet(root,min,max);
+        return a;
+    }
+};
